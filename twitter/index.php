@@ -18,6 +18,8 @@ https://github.com/themattharris/tmhOAuth
 
  */
 
+require_once('private.php');
+
 if(empty($_POST)) { die(); }
 
 class ezTweet {
