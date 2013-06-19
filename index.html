@@ -5,36 +5,33 @@
     <meta name="description" content="Supporting all of the major DRM-free comic book formats, iComics is an app that lets you read comics on your iPad, iPhone or iPod touch!" />
     <meta name="keywords" content="iComics, comic, book, reader, iOS, iPhone, iPod, iPad, CBZ, CBR, PDF, EPUB" />
 
-    <link rel="image_src" href="img/screenshot.png" />
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="image_src" href="/screenshot.png" />
+    <link rel="shortcut icon" href="/favicon.ico">
     
     <meta content="width=1024;" name="viewport" />
 
     <title>iComics - The comic reader for iOS</title>
     
-    <script src="js/jquery-1.8.2.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.retina.js"></script>
-    <script src="js/jquery.tweet.js"></script>
-    <script src="js/jquery.contactform.js"></script>
+    <script src="/js/jquery-1.8.2.min.js"></script>
+    <script src="/js/jquery.retina.js"></script>
+    <script src="/twitter/jquery.tweet.js"></script>
+    <script src="/js/jquery.contactform.js"></script>
 
     <script type='text/javascript'>
           $(document).ready( function() {
-             $(".tweets").tweet({
+             /*$(".tweets").tweet({
                 query: "icomics -from:vk_icomics -NARR8 -icomics.co.kr lang:en",
                 avatar_size: 64,
                 count: 2,
                 loading_text: "loading tweets...",
                 template: "{text}{avatar}{user}{time} "
-            });
+            });*/
 
              $('img').retina();
           });
     </script>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/main.css?update=18032013" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
   </head>
   <body>
     <div id="fb-root"></div>
@@ -49,7 +46,7 @@
       <div class="container">
         <img src="img/iComicsHeaderArt.png" id="splash-art" width="633" height="807" alt="iComics on iPhone 5 and the new iPad" />
         <img src="img/iComicsLogo.png" id="logo" width="402" height="114" alt="iComics Logo" />
-        <a href="http://icomics.co/app">
+        <a href="/app">
           <img src="img/AppStoreBadge.png" id="app-store-badge" width="244" height="133" alt="Now available on the App Store. (Compatible with iPhone, iPod touch and iPad. Requires iOS 5.0 or above)" />
         </a>
       </div>
@@ -118,7 +115,7 @@
         <div class="info-block-alt">
           <div class="shadow-top">&nbsp;</div>
           <div class="shadow-bottom">&nbsp;</div>
-          <img src="img/iPhone3GS.png" alt="iComics on iPhone 3GS" width="358" height="340" id="iphone3gs" />
+          
           <div id="features-2">
             <img src="img/Features2Title.png" alt="Tailored reading options" width="449" height="43" class="info-title" /><br/>
             <p>Comic books can come in all shapes and formats. iComics features multiple controls to help handle this.</p>

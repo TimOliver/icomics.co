@@ -67,7 +67,7 @@ class Mailer
 	//An array to store any errors that occur
 	private $debugger = '';
 	
-	function __construct( $config = NULL )
+	function __construct($config = NULL)
 	{
 		//init all of the mail variables
 		$this->clear();
@@ -84,8 +84,8 @@ class Mailer
 						);
 		
 		//if a config argument was supplied, overlay it into the default one
-		if( $config !== NULL && is_array($config) )
-			$this->config = array_merge( $this->config, $config );
+		if ($config !== NULL && is_array($config))
+			$this->config = array_merge($this->config, $config);
 	}
 	
 	/*
@@ -100,7 +100,7 @@ class Mailer
 	*/
 	function to( $address='' )
 	{
-		if( func_num_args() == 0 )
+		if (func_num_args() == 0)
 			return FALSE;
 
 		$this->to = $this->parse_address_args( func_get_args() );
@@ -118,12 +118,12 @@ class Mailer
 	*
 	* NB: Each email must conform to the RFC 2822 standards format.
 	*/
-	function cc( $address = '' )
+	function cc($address = '')
 	{
-		if( func_num_args() == 0 )
+		if (func_num_args() == 0)
 			return FALSE;
 
-		$this->cc = $this->parse_address_args( func_get_args() );	
+		$this->cc = $this->parse_address_args(func_get_args());	
 		
 		return TRUE;
 	}
@@ -140,10 +140,10 @@ class Mailer
 	*/
 	function bcc( $address = '' )
 	{
-		if( func_num_args() == 0 )
+		if (func_num_args() == 0)
 			return FALSE;
 
-		$this->bcc = $this->parse_address_args( func_get_args() );	
+		$this->bcc = $this->parse_address_args(func_get_args());	
 		
 		return TRUE;
 	}
@@ -153,13 +153,13 @@ class Mailer
 	*
 	* Set the source of this message
 	*/
-	function from( $address='', $name = '' )
+	function from($address='', $name = '')
 	{
-		if( !$address )
+		if (!$address)
 			return FALSE;
 		
 		//if required, test the email for validity
-		if( $this->config['validate'] )
+		if ($this->config['validate'])
 		{
 			if( !$this->email_is_valid( $address, true ) )
 			{
@@ -170,7 +170,7 @@ class Mailer
 		
 		$this->from_address = $address;
 
-		if( $name )
+		if  ($name) 
 			$this->from = $name.' <'.$address.'>';
 		else
 			$this->from = $address;
@@ -185,17 +185,17 @@ class Mailer
 	*/
 	function reply_to( $address = '', $name = '' )
 	{
-		if( !$address )
+		if (!$address)
 			return FALSE;
 		
 		//if required, test the email for validity
-		if( $this->config['validate'] )
+		if ($this->config['validate'])
 		{
-			if( !$this->email_is_valid( $address, true ) )
-				$this->debug('Invalid reply-to email was supplied: '.$address );
+			if (!$this->email_is_valid( $address, true ))
+				$this->debug('Invalid reply-to email was supplied: '.$address);
 		}
 		
-		if( $name )
+		if ($name)
 			$this->reply_to = $name.' <'.$address.'>';
 		else
 			$this->reply_to = $address;
@@ -208,9 +208,9 @@ class Mailer
 	*
 	* Set the subject of the email
 	*/
-	function subject( $subject = '' )
+	function subject($subject = '')
 	{
-		if( !$subject )
+		if (!$subject)
 			return FALSE;
 			
 		$this->subject = $subject;
@@ -221,14 +221,14 @@ class Mailer
 	*
 	* Set the message of the email
 	*/
-	function message( $message = '' )
+	function message($message = '')
 	{
-		if( !$message )
+		if (!$message)
 			return;
 		
 		//if the message needs to be wrapped, do it now.
-		if( $this->config['wordwrap'] )
-			$this->message = $this->wrap_message( $message, $this->config['wraplength'], ($this->config['mailtype'] == 'html') );
+		if ($this->config['wordwrap'])
+			$this->message = $this->wrap_message($message, $this->config['wraplength'], ($this->config['mailtype'] == 'html'));
 		else
 			$this->message = $message;
 	}
@@ -239,15 +239,15 @@ class Mailer
 	* A textual version of an HTML email that can be
 	* passed along if the event the client can't read HTML.
 	*/
-	function alt_message( $alt_message = '' )
+	function alt_message($alt_message = '')
 	{
 		//pointless if the primary message is already text
-		if( $this->config['mailtype'] == 'text' )
+		if ($this->config['mailtype'] == 'text')
 			return;
 
 		//if the message needs to be wrapped, do it now.
-		if( $this->config['wordwrap'] )
-			$this->alt_message = $this->wrap_message( $alt_message, $this->config['wraplength'], false );
+		if ($this->config['wordwrap'])
+			$this->alt_message = $this->wrap_message($alt_message, $this->config['wraplength'], false);
 		else
 			$this->alt_message = $alt_message;
 	}
@@ -262,9 +262,9 @@ class Mailer
 	*
 	* NB: Each email must conform to the RFC 2822 standards format.
 	*/
-	private function parse_address_args( $args = NULL )
+	private function parse_address_args($args = NULL)
 	{
-		if( $args == NULL )
+		if ($args == NULL)
 			return NULL;
 		
 		//new list of addresses
@@ -273,33 +273,33 @@ class Mailer
 		//if the first argument is an array,
 		//extract all of the addresses from it,
 		//else assume it's a delimited list of strings
-		if( is_array( $args[0] ) )
+		if (is_array( $args[0]))
 		{
-			foreach( $args[0] as $address )
+			foreach ($args[0] as $address)
 			{
-				if( is_string($address ) ) //skip non-string entries
-					array_push( $address_list, $address );
+				if (is_string($address)) //skip non-string entries
+					array_push($address_list, $address);
 			}
 		}
 		else
 		{
-			foreach( $args as $address )
+			foreach ($args as $address)
 			{
-				if( is_string($address ) )//skip non-string entries
-					array_push( $address_list, $address );				
+				if (is_string($address))//skip non-string entries
+					array_push($address_list, $address);				
 			}
 		}
 
 		//if validation is enabled, check for proper formatting
 		//and email validity
-		if( $this->config['validate'] ) 
+		if ($this->config['validate']) 
 		{
 			//check for proper
-			foreach( $address_list as $address )
+			foreach ($address_list as $address)
 			{
-				if( !$this->email_is_valid( $address ) )
+				if (!$this->email_is_valid( $address))
 				{
-					$this->debug( 'A supplied email address wasn\'t formatted properly: '.$address );
+					$this->debug('A supplied email address wasn\'t formatted properly: '.$address);
 					return NULL;
 				}
 			}
@@ -312,7 +312,7 @@ class Mailer
 		{
 			$output .= $address_list[$i];
 			
-			if( $i < count($address_list)-1 )
+			if ($i < count($address_list)-1)
 				$output .= ', ';
 		}
 		
@@ -330,22 +330,22 @@ class Mailer
 	* $address - str - The target email address
 	* $ignore_format - bool - If only checking the validity of the email address is required
 	*/
-	private function email_is_valid( $address = '', $ignore_format = false )
+	private function email_is_valid($address = '', $ignore_format = false)
 	{
-		if( !strlen( $address ) )
+		if (!strlen($address))
 			return FALSE;
 			
 		//verify there is a valid email address in the string
-		if( preg_match( '%[a-z0-9._-]+@[a-z0-9_-]+\.[a-z.]+%is', $address ) <= 0)
+		if (preg_match( '%[a-z0-9._-]+@[a-z0-9_-]+\.[a-z.]+%is', $address ) <= 0)
 			return FALSE;
 		
 		//if ANY invalid email characters are found, assume it's the name encapsulated variant of the standard
-		if( !$ignore_format )
+		if (!$ignore_format)
 		{
-			if( preg_match( '%[^a-z0-9@._-]%is', $address ) > 0 )
+			if (preg_match( '%[^a-z0-9@._-]%is', $address ) > 0)
 			{
 				//ensure it matches the format of 
-				if( preg_match( '%.*\s<[a-z0-9@.]+>%is', $address ) <= 0 )
+				if (preg_match( '%.*\s<[a-z0-9@.]+>%is', $address ) <= 0)
 					return FALSE;
 			}
 		}
@@ -366,7 +366,7 @@ class Mailer
 	* $message - the message to parse
 	* $html - whether the message is html formatted or not
 	*/
-	private function wrap_message( $message = '', $wraplength = 75,  $html = false )
+	private function wrap_message($message = '', $wraplength = 75,  $html = false)
 	{
 		$new_message = '';
 		
@@ -376,14 +376,14 @@ class Mailer
 			$newline = "\n";
 		
 		//split the array up to isolate the nowrap bits
-		$chunks = preg_split( '%(\{nowrap\}[^{]+?\{/nowrap\})%is', $message, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE );
+		$chunks = preg_split('%(\{nowrap\}[^{]+?\{/nowrap\})%is', $message, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
 		
-		foreach( $chunks as $chunk )
+		foreach ($chunks as $chunk)
 		{
 			//a nowrap chunk was found
-			if( strpos( $chunk, '{nowrap}' ) !== FALSE )
+			if (strpos( $chunk, '{nowrap}' ) !== FALSE)
 			{
-				$chunk = str_replace( array( '{nowrap}', '{/nowrap}'), '', $chunk );
+				$chunk = str_replace(array('{nowrap}', '{/nowrap}'), '', $chunk);
 				$new_message .= $chunk.$newline;
 				continue;
 			}
@@ -401,20 +401,20 @@ class Mailer
 	* Convert an HTML block to normal text by extracting
 	* all of the HTML tags and tweaking the line breaks
 	*/
-	function generate_alt_message( $message = '' )
+	function generate_alt_message($message = '')
 	{
-		if( !$message )
+		if (!$message)
 			return NULL;
 			
 		//fix linebreaks
 		//replace <br/> with \n
-		$message = preg_replace( '%<br\s?/>([^\n\s])%im', "\n$1", $message );
+		$message = preg_replace('%<br\s?/>([^\n\s])%im', "\n$1", $message);
 		//replace <p> and </p>
-		$message = preg_replace( '%([^\n\s])<p[^>]+?>%im', "$1\n\n", $message );
-		$message = preg_replace( '%</p[^>\s]+?>([^\n])%im', "\n\n$1", $message );
+		$message = preg_replace('%([^\n\s])<p[^>]+?>%im', "$1\n\n", $message);
+		$message = preg_replace('%</p[^>\s]+?>([^\n])%im', "\n\n$1", $message);
 		
 		//strip all HTML tags
-		$message = preg_replace( '%<[^>]+?>%is', '', $message );
+		$message = preg_replace('%<[^>]+?>%is', '', $message);
 		
 		return $message;
 	}
@@ -427,15 +427,15 @@ class Mailer
 	*/
 	function send()
 	{
-		if( !$this->to )
+		if (!$this->to)
 			return FALSE;
 		
 		//If no alt_message was supplied, generate one
-		if( $this->config['mailtype'] == 'html' && !$this->alt_message )
-			$this->alt_message = $this->generate_alt_message( $this->message );	
+		if ($this->config['mailtype'] == 'html' && !$this->alt_message)
+			$this->alt_message = $this->generate_alt_message($this->message);	
 		
 		//if no reply-to was set, use the 'from' field
-		if( !$this->reply_to )
+		if (!$this->reply_to)
 			$this->reply_to = $this->from;
 		
 		//generate a random boundary
@@ -451,23 +451,23 @@ class Mailer
 		$headers .= 'X-Mailer: '.$this->config['useragent'].$n;
 		
 		//From field
-		if( $this->from ) 
+		if ($this->from) 
 		{
 			$headers .= 'From: '.$this->from.$n;
 
-			if( $this->from_address )
+			if ($this->from_address)
 				$additional_headers = '-f '.$this->from_address;
 		}
 			
 
-		if( $this->cc )
+		if ($this->cc)
 			$headers .= 'Cc: '.$this->cc.$n;
 			
-		if( $this->bcc )
+		if ($this->bcc)
 			$headers .= 'Bcc: '.$this->bcc.$n;
 		
 		//Reply-To field
-		if( $this->reply_to )
+		if ($this->reply_to)
 		{
 			$headers .= 'Reply-To: '.$this->reply_to.$n;
 			$headers .= 'Return-Path: '.$this->reply_to.$n;
@@ -479,7 +479,7 @@ class Mailer
 		$message = '';
 		
 		//set up the messages
-		if( $this->config['mailtype'] == 'html' )
+		if ($this->config['mailtype'] == 'html')
 		{
 			$message .= $n.'--'.$boundary.$n;
 			$message .= 'Content-type: text/plain; charset='.$this->config['charset'].$n;
@@ -503,7 +503,7 @@ class Mailer
 		$this->debug( 'Headers: <br/>'.$headers );
 		$this->debug( 'Message: <br/>'.$message );
 	
-		return mail( $this->to, $this->subject, $message, $headers, $additional_headers );
+		return mail($this->to, $this->subject, $message, $headers, $additional_headers);
 	}
 	
 	/*
@@ -529,7 +529,7 @@ class Mailer
 	*
 	* Append an error message to the debug log
 	*/
-	private function debug( $msg = '' )
+	private function debug($msg = '')
 	{
 		$this->debugger .= $msg."<br/>\n";	
 	}
@@ -541,7 +541,7 @@ class Mailer
 	*/
 	function print_debugger()
 	{
-		$output = str_replace( "\n", "<br/>\n", $this->debugger );
+		$output = str_replace("\n", "<br/>\n", $this->debugger);
 		echo $output;	
 	}
 }

@@ -3,12 +3,16 @@ iComics Website Primary Styles
 Tim Oliver
 */
 
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+
 body 
 {
 	background: #333;
 	color: #555;
-	font-family: Helvetica, Arial, sans-serif;
-	line-height: 22px;
+	font-family: 'Droid Sans', Helvetica, Arial, sans-serif;
+	line-height: 160%;
+	margin: 0;
+	padding: 0;
 }
 
 a {
@@ -16,6 +20,7 @@ a {
 }
 
 .container {
+	margin: 0 auto;
 	position: relative;
 	width: 980px !important;
 }
