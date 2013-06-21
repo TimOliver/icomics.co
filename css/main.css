@@ -17,6 +17,25 @@ body
 
 a {
 	color: #3091d5;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h3 {
+	margin: 0 0 10px;
+	font-size: 19pt;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	margin: 0 0 15px;
 }
 
 .container {
@@ -27,7 +46,7 @@ a {
 
 header
 {
-	height: 775px;
+	height: 755px;
 	position: relative;
 	width: 100%;
 	background: #eee url(../img/HeaderBackground.png);
@@ -65,6 +84,12 @@ header
 	left: 640px;
 }
 
+#app-requirements {
+	position: absolute;
+	top: 633px;
+	left: 649px;
+}
+
 #content 
 {
 	width: 100%;
@@ -81,6 +106,10 @@ header
 	min-height: 100px;
 	position: relative;
 	overflow: hidden;
+}
+
+.text-block {
+	position: absolute;
 }
 
 .info-block-alt
@@ -140,26 +169,36 @@ screen and (max-moz-device-pixel-ratio: 2)
 
 .info-title
 {
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 
-#intro
+#intro {
+	height: 420px;
+}
+
+#intro .text-block
 {
-	padding: 125px 20px 70px;
-	width: 510px;
+	width: 540px;
+	top: 100px;
+	left: 35px;
 }
 
-#iphone-4s
+#iphone-4s 
 {
 	position: absolute;
 	bottom: 0;
 	right: 15px;
 }
 
-#comics-intro
+#comics-intro {
+	height: 390px;
+}
+
+#comics-intro .text-block
 {
 	width: 575px;
-	padding: 80px 0 25px 375px;
+	top: 70px;
+	left: 370px;
 }
 
 #ipod4g
@@ -178,7 +217,7 @@ screen and (max-moz-device-pixel-ratio: 2)
 
 .comics-list
 {
-	width: 410px;
+	width: 380px;
 	float: left;
 	margin-top:10px;
 	font-size: 13pt;
@@ -186,8 +225,7 @@ screen and (max-moz-device-pixel-ratio: 2)
 
 .formats
 {
-	width: 110px !important;
-	margin-right: 50px;
+	width: 190px !important;
 }
 
 .comics-list h3
@@ -200,8 +238,14 @@ screen and (max-moz-device-pixel-ratio: 2)
 	margin-bottom: 5px;
 }
 
+.formats-list {
+	list-style: none;
+	width: 200px;
+}
+
 .formats-list li
 {
+	float: left;
 	width: 100px;
 }
 
@@ -214,7 +258,59 @@ screen and (max-moz-device-pixel-ratio: 2)
 .downloads-list li
 {
 	float: left;
-	width: 200px;
+	width: 185px;
+}
+
+#iphone5toggles {
+	position: absolute;
+	right: -21px;
+	bottom: -35px;
+}
+
+.toggle-text {
+	position: absolute;
+	font-size: 9pt;
+	text-align: center;
+	width: 230px;
+}
+
+.page-direction {
+	left: 208px;
+	top: 198px;
+}
+
+.zoom-lock {
+	left: 731px;
+	top: 560px;
+	text-align: left;
+}
+
+.split-wide-pages {
+	left: 780px;
+	top: 430px;
+}
+
+.page-scrub {
+	top: 242px;
+	left: 9px;
+}
+
+#features-1 {
+	height: 700px;
+}
+
+#features-1 .text-block
+{
+	width: 430px;
+	top: 35px;
+	left: 32px;
+}
+
+.features-column
+{
+	float: left;
+	width: 195px;
+	margin-right: 25px;
 }
 
 #ipad
@@ -224,31 +320,17 @@ screen and (max-moz-device-pixel-ratio: 2)
 	bottom: 0;
 }
 
-#features-1
-{
-	padding: 90px 0 40px 30px;
-	width: 410px;
-}
-
-.features-column
-{
-	float: left;
-	width: 180px;
-	margin-right: 25px;
-}
-
-#iphone3gs
-{
-	position: absolute;
-	left: 20px;
-	bottom: 0;
-}
-
 #features-2
 {
-	padding: 70px 0 20px 410px;
+	height: 395px;
+}
+
+#features-2 .text-block	
+{
 	width: 550px;
 	overflow: hidden;
+	top: 70px;
+	left: 25px;
 }
 
 .reading-options-list
@@ -311,8 +393,8 @@ footer a:hover
 
 #footer-items
 {
-	margin: 45px auto 60px;
-	height: 100px;
+	margin: 45px auto 0px;
+	height: 295px;
 	list-style-type: none;
 	position: relative;
 	padding-left: 20px;
@@ -410,6 +492,7 @@ footer a:hover
 #support-form
 {
 	position: relative;
+	top: -10px;
 }
 
 #support-form #loader,
@@ -421,6 +504,7 @@ footer a:hover
 	top: 50%;
 	left: 50%;
 	border-radius: 5px;
+	padding: 15px 15px 10px 15px;
 }
 
 #support-form #loader
@@ -444,9 +528,11 @@ footer a:hover
 	border-radius: 4px;
 	color: #888;
 	width: 250px;
-	padding: 5px;
+	padding: 7px 5px;
 	font-family: Arial, sans-serif;
 	box-shadow: 0 1px 0 #555, inset 0 1px 1px #1d1d1d;
+	font-size: 10pt;
+	margin-bottom: 7px;
 }
 
 #support-form textarea
@@ -478,7 +564,8 @@ footer a:hover
 	color: #ddd;
 	text-shadow: 0 -1px 0 #000;
 	border: 1px solid #111;
-	padding: 7px 0;
+	padding: 9px 0;
+	font-size: 10pt;
 	box-shadow: inset 0 1px 0 #666, 0 1px 0 #555;
 }
 
