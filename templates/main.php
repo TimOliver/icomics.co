@@ -257,7 +257,7 @@
                   <input type="text" id="support-name" name="name" data-default="<? echo $langContactName; ?>" value="<? echo $langContactName; ?>"/><br/>
                   <input type="text" id="support-email" name="email" data-default="<? echo $langContactEmail; ?>" value="<? echo $langContactEmail; ?>"/><br/>
                   <textarea name="message" id="support-message" data-default="<? echo $langContactMessage; ?>"><? echo $langContactMessage; ?></textarea>
-                  <input type="submit" name="submit" value="Submit">
+                  <input type="submit" name="submit" value="<?php echo $langContactSubmit; ?>">
                 </form>
               </div>
           </li>
@@ -269,13 +269,15 @@
       <div id="copyright">
         <div class="container">
           <div id="copyright-text">
-            Copyright &copy; <a href="http://olivr.vg">Tim Oliver</a> 2012-<?php echo date('Y'); ?>. Hosted by <a href="http://www.ennoverse.com">Ennoverse</a>. 
-            Artwork: <a href="http://www.pixeden.com/psd-mock-up-templates/ipad-2-psd-vector-mockup-template">iPad 2</a> &bull; 
-                                <a href="http://www.pixeden.com/psd-mock-up-templates/iphone-5-psd-vector-mockup">iPhone 5</a> &bull; 
-                                <a href="http://www.pixeden.com/psd-mock-up-templates/iphone-4s-psd-vector-mockup-template">iPhone 4S</a> &bull; 
-                                <a href="http://www.pixeden.com/psd-mock-up-templates/ipad-psd-vector-mockup-template">iPad</a> &bull; 
-                                <a href="http://www.vectorized.it/vector-iphone-3g/">iPhone 3GS</a> &bull; 
-                                <a href="http://paulrobertlloyd.com/2009/06/social_media_icons/">Social Icons</a>
+            Copyright &copy; <a href="http://olivr.vg">Tim Oliver</a> 2012-<?php echo date('Y'); ?>. Hosted by <a href="http://www.ennoverse.com" target="_blank">Ennoverse</a>. 
+            Artwork: <a href="http://www.pixeden.com/psd-mock-up-templates/ipad-2-psd-vector-mockup-template" target="_blank">iPad 2</a> &bull; 
+                                <a href="http://pixeden.com/psd-mock-up-templates/3d-iphone-5-psd-vector-mockup-v2" target="_blank">iPhone 5</a> &bull; 
+                                <a href="http://www.pixeden.com/psd-mock-up-templates/iphone-4s-psd-vector-mockup-template" target="_blank">iPhone 4S</a> &bull; 
+                                <a href="http://www.pixeden.com/psd-mock-up-templates/ipad-psd-vector-mockup-template" target="_blank">iPad</a> &bull; 
+                                <a href="http://paulrobertlloyd.com/2009/06/social_media_icons/" target="_blank">Social Icons</a>
+
+            <a href="/"><img src="img/EN.png" alt="English" width="31" height="22" class="language-flag" /></a>
+            <a href="/jp"><img src="img/JP.png" alt="Japanese" width="31" height="22" class="language-flag" /></a>
           </div>
         </div>
       </div>

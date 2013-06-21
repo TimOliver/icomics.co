@@ -301,7 +301,7 @@ screen and (max-moz-device-pixel-ratio: 2)
 
 #features-1 .text-block
 {
-	width: 430px;
+	width: 435px;
 	top: 35px;
 	left: 32px;
 }
@@ -623,4 +623,9 @@ footer a:hover
 
 #copyright a {
 	color: #888;
+}
+
+.language-flag {
+	vertical-align: middle;
+	margin-left: 10px;
 }
