@@ -14,24 +14,24 @@
     
     <script src="/js/jquery-1.8.2.min.js"></script>
     <script src="/js/jquery.retina.js"></script>
-    <script src="/twitter/jquery.tweet.js"></script>
+    <script src="/twitter/jquery.tweet.js?time=<?php time(); ?>"></script>
     <script src="/js/jquery.contactform.js"></script>
 
     <script type='text/javascript'>
           $(document).ready( function() {
               $('img').retina();
 
-             /*$(".tweets").tweet({
+             $(".tweets").tweet({
                 query: "icomics -from:vk_icomics -NARR8 -icomics.co.kr lang:en",
                 avatar_size: 64,
                 count: 2,
                 loading_text: "loading tweets...",
                 template: "{text}{avatar}{user}{time} "
-            });*/
+            });
           });
     </script>
 
-    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/main.css?time=<?php date(); ?>" rel="stylesheet" />
   </head>
   <body>
     <div id="fb-root"></div>
@@ -74,7 +74,7 @@
             <?php if ($langCode=='ja'): ?>
             <img src="img/IntroductionTitleJP.png" alt="iOSコミックリーダーiComicsへようこそ" width="442" height="94" class="info-title" /><br/>
             <?php else: ?>
-            <img src="img/IntroductionTitle.png" alt="Welcome to iComics. The comic reader for iOS." width="458" height="78" class="info-title" /><br/>
+            <img src="img/IntroductionTitle.png" alt="Welcome to iComics. The comic reader for iOS." width="459" height="78" class="info-title" /><br/>
             <?php endif; ?>
             
             <?php echo $langIntroText; ?>
@@ -84,7 +84,11 @@
         <div class="info-block-alt" id="comics-intro">
           <div class="shadow-top">&nbsp;</div>
           <div class="shadow-bottom">&nbsp;</div>
-          <img src="img/iPod5thGenRed<?php echo $langSuffix;?>.png" alt="iComics on 5th Generation iPod touch (PRODUCT) RED Edition" width="307" height="350" id="ipod5g" />
+          <?php if ($langCode=='ja'): ?>
+          <img src="img/iPod5thGenRedJP.png" alt="iPod touch第五世代でiComics" width="307" height="352" id="ipod5g" />
+          <?php else: ?>
+          <img src="img/iPod5thGenRed.png" alt="iComics on 5th Generation iPod touch (PRODUCT) RED Edition" width="307" height="352" id="ipod5g" />
+          <?php endif; ?>
           <div class="text-block">
             <?php if ($langCode=='ja'): ?>
             <img src="img/ComicsTitleJP.png" alt="コミック？どんなコミック？" width="562" height="45" class="info-title" />
@@ -152,7 +156,7 @@
             <?php if ($langCode=='ja'): ?>
             <img src="img/Features1TitleJP.png" alt="早い。軽い。簡単。" width="370" height="43" class="info-title" /><br/>
             <?php else: ?>
-            <img src="img/Features1Title.png" alt="Fast, flexible and easy." width="403" height="44" class="info-title" /><br/>
+            <img src="img/Features1Title.png" alt="Fast, flexible and easy." width="384" height="43" class="info-title" /><br/>
             <?php endif; ?>
             <div class="features-column">
               <?php echo $langFeaturesFirstColumn; ?>
@@ -171,7 +175,22 @@
             <img src="img/UpcomingFeatures.png" alt="Upcoming features" width="348" height="44" class="info-title" /><br/>
             <?php endif; ?>
             <?php echo $langUpcomingFeatures; ?>
+            
             <ul class="upcoming-features-list">
+              <?php if ($langCode=='ja'): ?>
+              <li>iOS 7 対応</li>
+              <li>ブックマーク追加</li>
+              <li>別々のコミックコレクション</li>
+              <li>コミックのサムネール一覧</li>
+              <li>直接Dropboxから取り込み</li>
+              <li>WiFi/WebDAV対応</li>
+              <li>直接ブラウザー対応</li>
+              <li>別のコッミクにホットジャンプ</li>
+              <li>ネストされたファイル開き</li>
+              <li>コミックのカバー変更</li>
+              <li>縦のページ方向</li>
+              <li>デュアルページ表示</li>
+              <?php else: ?>
               <li>iOS 7 Support</li>
               <li>Adding bookmarks</li>
               <li>Separate comic collections</li>
@@ -184,6 +203,7 @@
               <li>Crop/format comic covers</li>
               <li>Vertical Scrolling</li>
               <li>Dual-page spread</li>
+              <?php endif; ?>
             </ul>
             <div style="clear:both"></div>
 

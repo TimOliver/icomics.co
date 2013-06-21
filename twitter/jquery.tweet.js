@@ -190,12 +190,12 @@
 			} else {
 				var query = (s.query || 'from:'+s.username.join(' OR from:'));
 				return {
-					host: s.twitter_search_url,
-					url: "/search.json",
+					host: s.twitter_api_url,
+					url: "/1.1/search/tweets.json",
 					parameters: $.extend({}, defaults, {
-						page: s.page,
+						/*page: s.page,*/
 						q: query,
-						rpp: count
+						count: count
 					})
 				};
 			}
@@ -208,7 +208,13 @@
 					extract_avatar_url(item, false).
 					replace(/^http:\/\/[a-z0-9]{1,3}\.twimg\.com\//, "https://s3.amazonaws.com/twitter_production/");
 			} else {
-				return item.profile_image_url || item.user.profile_image_url;
+				if (item.profile_image_url)
+					return item.profile_image_url.replace('_normal.','.');
+
+				if (item.user.profile_image_url)
+					return item.user.profile_image_url.replace('_normal.','.');
+
+				return '';
 			}
 		}
 

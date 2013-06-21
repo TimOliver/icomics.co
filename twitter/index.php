@@ -35,7 +35,7 @@ class ezTweet {
 	private $user_token = USER_ACCESS_TOKEN;
 
 	// Your Twitter App Access Token Secret
-	private $user_secret = USER_ACCESS_TOKEN;
+	private $user_secret = USER_ACCESS_SECRET;
 
 	// Path to tmhOAuth libraries
 	private $lib = './lib/';
@@ -50,7 +50,7 @@ class ezTweet {
 	private $cache_dir = './';
 
 	// Enable debugging
-	private $debug = false;
+	private $debug = true;
 
 	/**************************************************************************************/
 

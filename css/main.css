@@ -450,6 +450,8 @@ footer a:hover
 	top:0;
 	left: 0;
 	box-shadow: 0 2px 5px #111;
+	width:64px;
+	height: 64px;
 }
 
 .tweet_user
@@ -465,14 +467,16 @@ footer a:hover
 	position: absolute;
 	right: 0;
 	top: 0;
+	font-size:9pt;
 }
 
 .tweet_text
 {
 	float: left;
 	margin-left: 75px;
-	margin-top: 20px;
+	margin-top: 25px;
 	font-size: 9pt;
+	line-height: 160%;
 }
 
 .credits-text

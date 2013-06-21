@@ -21,8 +21,8 @@ $localisedStrings['en']['langIntroText'] = 'iComics is an app that lets you read
 								            from their own collection, iComics lets you bring your own to the table. With many indie comic artists distributing their comic books online, 
 								            not to mention the vast number of old-school comics that have now released into public domain, iComics lets you tap into a larger world of comic books, all at your fingertips!';
 
-$localisedStrings['ja']['langIntroText'] = 'iComicsはiOSデバイスで著作権管理なしのコミックを読めるアプリです。App Storeでコミックを売っているコミックアプリとは違って、iComicsは自分のコレクションをデバイスに乗せて、読めます。インタネットでは
-											芸術者が配信した同人コミックやすでに絶版されたコッミクやパッブリックドメインに入ったコミックはものすごくいっぱいありますから、iComicsを持っていたら簡単に読めます！';
+$localisedStrings['ja']['langIntroText'] = 'iComicsはiOSデバイスで著作権管理なしのコミックを読めるアプリです。App Storeでコミックを売っているコミックアプリとは違って、iComicsは自分のコレクションをデバイスに乗せて、読めるアプリです。インタネットでは
+											芸術者が配信している同人コミックやすでに絶版されたコッミクやパッブリックドメインに入ったコミックはものすごくいっぱいありますから、iComicsでコッミクをもっと楽しめます！';
 
 /* Comics description text */
 $localisedStrings['en']['langComicsTypeDescription'] = 'iComics supports all of the main DRM-free comic book formats. All you need to do is import your comic book files into iComics 
