@@ -2,15 +2,15 @@
 <html lang="<?php echo $langCode;?>">
   <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Supporting all of the major DRM-free comic book formats, iComics is an app that lets you read comics on your iPad, iPhone or iPod touch!" />
-    <meta name="keywords" content="iComics, comic, book, reader, iOS, iPhone, iPod, iPad, CBZ, CBR, PDF, EPUB" />
+    <meta name="description" content="<?php echo $langPageDescription; ?>" />
+    <meta name="keywords" content="<?php echo $langPageKeywords; ?>" />
 
     <link rel="image_src" href="/screenshot.png" />
     <link rel="shortcut icon" href="/favicon.ico">
     
     <meta content="width=1024" name="viewport" />
 
-    <title>iComics - The comic reader for iOS</title>
+    <title><?php echo $langPageTitle; ?></title>
     
     <script src="/js/jquery-1.8.2.min.js"></script>
     <script src="/js/jquery.retina.js"></script>
@@ -19,7 +19,7 @@
 
     <script type='text/javascript'>
           $(document).ready( function() {
-              $('img').retina();f2012
+              $('img').retina();
 
              /*$(".tweets").tweet({
                 query: "icomics -from:vk_icomics -NARR8 -icomics.co.kr lang:en",
@@ -44,7 +44,12 @@
     }(document, 'script', 'facebook-jssdk'));</script>
     <header>
       <div class="container">
-        <img src="img/iComicsHeaderArt<?php echo $langSuffix;?>.png" id="splash-art" width="608" height="763" alt="iComics on iPhone 5 and the new iPad" />
+        <?php if ($langCode=='ja'): ?>
+        <img src="img/iComicsHeaderArtJP.png" id="splash-art" width="608" height="763" alt="iPhone 5と新しいiPadで、iComics。" />
+        <?php else: ?>
+        <img src="img/iComicsHeaderArt.png" id="splash-art" width="608" height="763" alt="iComics on iPhone 5 and the new iPad" />
+        <?php endif; ?>
+
         <img src="img/iComicsLogo.png" id="logo" width="402" height="114" alt="iComics Logo" />
         <a href="<?php if ($langCode=='ja'):?>/jp<?php endif; ?>/app">
           <?php if ($langCode=='ja'): ?>
@@ -71,9 +76,8 @@
             <?php else: ?>
             <img src="img/IntroductionTitle.png" alt="Welcome to iComics. The comic reader for iOS." width="458" height="78" class="info-title" /><br/>
             <?php endif; ?>
-            iComics is an app that lets you read DRM-free digital comic books on your iOS devices. Unlike the other comic apps on the App Store that let you buy comics
-            from their own collection, iComics lets you bring your own to the table. With many indie comic artists distributing their comic books online, 
-            not to mention the vast number of old-school comics that have now released into public domain, iComics lets you tap into a larger world of comic books, all at your fingertips!
+            
+            <?php echo $langIntroText; ?>
           </div>
           <div style="clear:both"></div>
         </div>
@@ -87,10 +91,9 @@
             <?php else: ?>
             <img src="img/ComicsTitle.png" alt="Comics? What comics?" width="547" height="35" class="info-title" />
             <?php endif; ?>
-            <p>iComics supports all of the main DRM-free comic book formats. All you need to do is import your comic book files into iComics via iTunes and 
-              they'll automatically start unpacking themselves, ready to read in seconds!</p>
+            <p><?php echo $langComicsTypeDescription; ?></p>
             <div class="comics-list formats">
-              <h3>Formats</h3>
+              <h3><?php echo $langFormats; ?></h3>
                 <ul class="formats-list">
                   <li>&bull; CBZ (ZIP)</li>
                   <li>&bull; LZH</li>
@@ -103,7 +106,7 @@
               </ul>
             </div>
             <div class="comics-list">
-              <h3>Comic Downloads</h3> 
+              <h3><?php echo $langDownloads; ?></h3> 
               <ul class="downloads-list">
                 <li><a href="http://digitalcomicmuseum.com/" rel="nofollow">Digital Comic Museum</a></li>
                 <li><a href="http://comicbookplus.com/" rel="nofollow">Comic Book Plus</a></li>
@@ -119,11 +122,15 @@
         </div>
         <div class="info-block" id="features-1">
 
-          <img src="img/iPhone5Toggles<?php echo $langSuffix;?>.png" alt="iComics toggle controls on an iPhone 5" width="1012" height="661" id="iphone5toggles" />
-          <div class="toggle-text page-direction">Change page direction (Left/Right)</div>
-          <div class="toggle-text zoom-lock">Lock zoom scale between pages</div>
-          <div class="toggle-text split-wide-pages">Split wide pages across screen</div>
-          <div class="toggle-text page-scrub">Jump between pages</div>
+          <?php if ($langCode=='ja'): ?>
+          <img src="img/iPhone5TogglesJP.png" alt="iComics toggle controls on an iPhone 5" width="1012" height="662" id="iphone5toggles" />
+          <?php else: ?>
+          <img src="img/iPhone5Toggles.png" alt="iComics toggle controls on an iPhone 5" width="1012" height="661" id="iphone5toggles" />
+          <?php endif; ?>
+          <div class="toggle-text page-direction"><?php echo $langTogglePageDirection; ?></div>
+          <div class="toggle-text zoom-lock"><?php echo $langToggleZoomLock; ?></div>
+          <div class="toggle-text split-wide-pages"><?php echo $langToggleSplitWidePages; ?></div>
+          <div class="toggle-text page-scrub"><?php echo $langTogglePageJump; ?></div>
 
           <div class="text-block">
             <?php if ($langCode=='ja'): ?>
@@ -131,8 +138,7 @@
             <?php else: ?>
             <img src="img/Features2Title.png" alt="Read all of the things!" width="343" height="43" class="info-title" /><br/>
             <?php endif; ?>
-            Comics can come in any shape or size. iComics comes with a suite of display settings to 
-            make sure you can read your comics the way they were meant to be read!
+            <?php echo $langReadingTogglesDescription; ?>
           </div>
           <div style="clear:both"></div>
         </div>
@@ -149,12 +155,10 @@
             <img src="img/Features1Title.png" alt="Fast, flexible and easy." width="403" height="44" class="info-title" /><br/>
             <?php endif; ?>
             <div class="features-column">
-              iComics has been designed from the ground up with speed as the absolutely top priorty. Comics import quickly, they're silky smooth
-              to read, and are easily configurable. And performance is the same no matter how old your device is!
+              <?php echo $langFeaturesFirstColumn; ?>
             </div>
             <div class="features-column">
-              Not only that, iComics puts a great amount of emphasis on making managing comic files on your iOS device as flexible as possible. 
-              You can re-order comics, change their reading state, rename them and many more features are on the way!
+              <?php echo $langFeaturesSecondColumn; ?>
             </div>
             <div style="clear:both"></div>
           </div>
@@ -166,7 +170,7 @@
             <?php else: ?>
             <img src="img/UpcomingFeatures.png" alt="Upcoming features" width="348" height="44" class="info-title" /><br/>
             <?php endif; ?>
-            Version 1.0 set the stage, and version 1.0.6 raised the bar. But it's not over yet.<br/>Check out these upcoming features that are right around the corner!
+            <?php echo $langUpcomingFeatures; ?>
             <ul class="upcoming-features-list">
               <li>iOS 7 Support</li>
               <li>Adding bookmarks</li>
@@ -183,7 +187,7 @@
             </ul>
             <div style="clear:both"></div>
 
-            <a href="http://icomics.uservoice.com">Got an idea to make iComics even better? Suggest it! &raquo;</a><br/>
+            <a href="http://icomics.uservoice.com"><?php echo $langUserVoiceLink; ?></a><br/>
 
           </div>
         </div>
@@ -200,8 +204,7 @@
               <?php endif; ?>
 
               <div class="credits-text">
-                iComics is the caffeinated machination of Tim Oliver, a 26 year old geek from Perth, Australia. 
-                When he's not cranking out apps, he can be found professionally developing websites, or unprofessionally singing karaoke in Japan.
+                <?php echo $langDeveloperProfile; ?>
                 <br/>
                 <div class="social-icons">
                   <a href="http://timoliver.com.au" target="_blank"><img src="img/WebsiteIcon.png" alt="Website" width="24" height="24" /></a>
@@ -251,9 +254,9 @@
                 <div id="loader" style="display: none;"><img src="img/AjaxLoader.gif" width="32" height="32" alt="Loading..." /></div>
                 <div id="success" style="display: none;"><img src="img/Success.png" width="78" height="78" alt="Success!" /></div>
                 <form action="#" method="post">
-                  <input type="text" id="support-name" name="name" data-default="Name" value="Name"/><br/>
-                  <input type="text" id="support-email" name="email" data-default="Email" value="Email"/><br/>
-                  <textarea name="message" id="support-message" data-default="Message">Message</textarea>
+                  <input type="text" id="support-name" name="name" data-default="<? echo $langContactName; ?>" value="<? echo $langContactName; ?>"/><br/>
+                  <input type="text" id="support-email" name="email" data-default="<? echo $langContactEmail; ?>" value="<? echo $langContactEmail; ?>"/><br/>
+                  <textarea name="message" id="support-message" data-default="<? echo $langContactMessage; ?>"><? echo $langContactMessage; ?></textarea>
                   <input type="submit" name="submit" value="Submit">
                 </form>
               </div>
