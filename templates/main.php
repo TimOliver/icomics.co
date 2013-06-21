@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<?php echo $langCode;?>">
+<html lang="<?php echo $langCode;?>" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
   <head>
     <meta charset="UTF-8">
     <meta name="description" content="<?php echo $langPageDescription; ?>" />
@@ -8,6 +8,7 @@
     <link rel="image_src" href="/screenshot.png" />
     <link rel="shortcut icon" href="/favicon.ico">
     
+    <meta property="og:image" content="/screenshot.png" />
     <meta content="width=1024" name="viewport" />
 
     <title><?php echo $langPageTitle; ?></title>

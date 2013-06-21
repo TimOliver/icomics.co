@@ -17,9 +17,9 @@ $localisedStrings['ja']['langPageKeywords'] = 'iComics, コミック, 本, リ�
 $localisedStrings['ja']['langPageTitle'] = 'iComics - iOSのコミックリーダー';
 
 /* Intro Text */
-$localisedStrings['en']['langIntroText'] = 'iComics is an app that lets you read DRM-free digital comic books on your iOS devices. Unlike the other comic apps on the App Store that let you buy comics
-								            from their own collection, iComics lets you bring your own to the table. With many indie comic artists distributing their comic books online, 
-								            not to mention the vast number of old-school comics that have now released into public domain, iComics lets you tap into a larger world of comic books, all at your fingertips!';
+$localisedStrings['en']['langIntroText'] = 'iComics is an app that lets you read digital comic books on your iOS devices.<br/>Unlike the other comic apps on the App Store that let you buy comics
+								            from their own collection, iComics lets you bring your own to the table. With many DRM-free comics available online, including indie comic artists distributing their comic books online, 
+								            as well as the vast number of old-school comics that have now become public domain, iComics lets you tap into a much larger world of comic books, all at your fingertips!';
 
 $localisedStrings['ja']['langIntroText'] = 'iComicsはiOSデバイスで著作権管理なしのコミックを読めるアプリです。App Storeでコミックを売っているコミックアプリとは違って、iComicsは自分のコレクションをデバイスに乗せて、読めるアプリです。インタネットでは
 											芸術者が配信している同人コミックやすでに絶版されたコッミクやパッブリックドメインに入ったコミックはものすごくいっぱいありますから、iComicsでコッミクをもっと楽しめます！';
@@ -30,7 +30,7 @@ $localisedStrings['en']['langComicsTypeDescription'] = 'iComics supports all of 
 $localisedStrings['en']['langFormats'] = 'Formats';
 $localisedStrings['en']['langDownloads'] = 'Comic Downloads';
 
-$localisedStrings['ja']['langComicsTypeDescription'] = 'iComicsはすぺてのデジタル著作権管理なしコミックのフォーマットを対応しています。iOSデバイスで読むために、iTunesからコピーすることです。iComicsは自動的に読み込んで、何秒でアクセスできてきます。';
+$localisedStrings['ja']['langComicsTypeDescription'] = 'iComicsはすぺてのデジタル著作権管理なしコミックのフォーマットを対応しています。iOSデバイスで読むために、iTunesからコピーする事です。iComicsは自動的に読み込んで、何秒でアクセスされます！';
 $localisedStrings['ja']['langFormats'] = 'フォーマット';
 $localisedStrings['ja']['langDownloads'] = 'ダウンロードサイト';
 
