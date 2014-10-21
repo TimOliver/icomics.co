@@ -1,3 +1,9 @@
 {
-	"notifications": []
+	"notifications": [{
+		"id": 1,
+		"title": "iComics is now on Facebook!",
+		"message": "iComics now has an official page on Facebook! Go like it for news on iComics' upcoming features and for requesting support!",
+		"url": "facebook://702871653072914",
+		"expiration-time": 1389936250
+	}]
 }

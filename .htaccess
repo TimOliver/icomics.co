@@ -1,0 +1,39 @@
+#iComics Rewrite Rules
+
+Options +FollowSymLinks
+
+# Enable rewrite rules
+RewriteEngine On
+RewriteBase /
+
+#Ensure we don't use the www domain
+RewriteCond %{HTTP_HOST} ^www.icomics.co$ [NC]
+RewriteRule ^(.*)$ http://icomics.co/$1 [R=301]
+
+#Language Support
+RewriteRule ^([a-z]{2})$ /?lang=$1 [NC,L]
+RewriteRule ^([a-z]{2})\/app$ http://itunes.apple.com/$1/app/icomics/id493845493 [NC,L]
+
+#Redirect to Apple iTunes Support
+Redirect /file-sharing-from-itunes/ja http://support.apple.com/kb/HT4094?viewlocale=ja_JP
+Redirect /file-sharing-from-itunes/de http://support.apple.com/kb/HT4094?viewlocale=de_DE
+Redirect /file-sharing-from-itunes/tcn http://support.apple.com/kb/HT4094?viewlocale=zh_TW
+Redirect /file-sharing-from-itunes/scn http://support.apple.com/kb/HT4094?viewlocale=zh_CN
+Redirect /file-sharing-from-itunes/pl http://support.apple.com/kb/HT4094?viewlocale=pl_PL
+Redirect /file-sharing-from-itunes/es http://support.apple.com/kb/HT4094?viewlocale=es_ES
+Redirect /file-sharing-from-itunes/en http://support.apple.com/kb/HT4094
+Redirect /file-sharing-from-itunes/en-GB http://support.apple.com/kb/HT4094
+Redirect /file-sharing-from-itunes/ http://support.apple.com/kb/HT4094
+Redirect /file-sharing-from-itunes http://support.apple.com/kb/HT4094
+
+#Redirect to iTunes Page
+Redirect /app http://itunes.apple.com/us/app/icomics/id493845493
+
+#Redirect to Localisation Page
+Redirect /localisation https://docs.google.com/spreadsheet/ccc?key=0ApZj_-niqfJtdG1pNnpwMGdCcVludUdScTVqbU1sc2c&usp=sharing
+
+#Redirect to notifications file
+Redirect /notifications /notifications.json
+
+#Redirect to TimOliver.com.au news feed
+Redirect /news.rss http://www.timoliver.com.au/tag/icomics/feed/

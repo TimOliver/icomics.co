@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="<?php echo $langPageDescription; ?>" />
     <meta name="keywords" content="<?php echo $langPageKeywords; ?>" />
+	<meta name="google-site-verification" content="u3JPeQFi0Xm-S2mXiPIsgOhEKAUDaJnZU0IYoLZj32M" />
 
     <link rel="image_src" href="/screenshot.png" />
     <link rel="shortcut icon" href="/favicon.ico">
@@ -23,13 +24,34 @@
               $('img').retina();
 
              $(".tweets").tweet({
-                query: "icomics -from:vk_icomics -NARR8 -icomics.co.kr lang:en",
+                query: "icomics -from:vk_icomics -NARR8 -icomics.co.kr lang:en -from:sup_tim_lol",
                 avatar_size: 64,
                 count: 2,
                 loading_text: "loading tweets...",
                 template: "{text}{avatar}{user}{time} "
             });
           });
+    </script>
+
+    <script type="text/javascript">
+      var _tsq = _tsq || [];
+      _tsq.push(["setAccountName", "icomics"]);
+      _tsq.push(["fireHit", "icomics_home", []]);
+
+      (function() {
+          function z(){
+              var s = document.createElement("script");
+              s.type = "text/javascript";
+              s.async = "async";
+              s.src = window.location.protocol + "//cdn.tapstream.com/static/js/tapstream.js";
+              var x = document.getElementsByTagName("script")[0];
+              x.parentNode.insertBefore(s, x);
+          }
+          if (window.attachEvent)
+              window.attachEvent("onload", z);
+          else
+              window.addEventListener("load", z, false);
+      })();
     </script>
 
     <link href="css/main.css?time=<?php date(); ?>" rel="stylesheet" />
