@@ -38,7 +38,7 @@
 			</div>
 		</div>
 		<div id="promo">
-			<a href="http://icomics.co"><img src="img/iComicsLiveLogo.png" alt="iComics Logo" width="351" height="96" /></a>
+			<a href="http://icomics.co" target="_blank"><img src="img/iComicsLiveLogo.png" alt="iComics Logo" width="351" height="96" /></a>
 		
 			<div id="promo-social">
 				<a href="http://twitter.com/iComicsApp" target="_blank"><img src="img/Twitter.png" alt="Twitter" width="31" height="25" /></a>
