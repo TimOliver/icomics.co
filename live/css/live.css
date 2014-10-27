@@ -1,0 +1,95 @@
+html, body {
+	background: #eee;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+}
+
+ * {
+    padding: 0;
+    margin: 0;
+}
+
+iframe {
+	border: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+    overflow: hidden;
+    border: none;
+}
+
+#no-video {
+	background-image: url(../img/iComics-Offline.jpg);
+	width: 100%;
+	height: 100%;
+	background-size: 100% auto;
+	position: relative;
+}
+
+#offline-message {
+	padding: 10px 15px;
+	font-size: 20pt;
+	position: absolute;
+	right: 30px;
+	top: 30px;
+	color: #fff;
+	font-family: Arial, sans-serif;
+	background-color: rgba(0,0,0,0.5);
+	border-radius: 5px;
+}
+
+#video {
+	position: relative;
+	width: calc(100% - 352px);
+	max-height: 100%;
+	z-index: 100;
+}
+
+#video:before {
+	content: "";
+	display: block;
+	padding-top: 56.25%;
+}
+
+#video-content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+#chat {
+	position: absolute;
+	right: 0;
+	top:0;
+	padding:0 !important;
+	height: 100%;
+	width: 350px;
+	z-index: 50;
+	border-left: solid 2px #ccc	;
+	background: #eee;
+}
+
+#promo {
+	position: absolute;
+	height: 100px;
+	width: calc(100% - 392px);
+	padding: 20px;
+	min-width: 500px;
+}
+
+#promo-social {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	width: 250px;
+	height: 50px;
+	text-align: right;
+}
+
+#promo-social img {
+	margin-left: 20px;
+}

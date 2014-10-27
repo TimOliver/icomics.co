@@ -3,7 +3,7 @@
 iComics.co Home Page
 */
 
-error_reporting( E_NONE );
+error_reporting(0);
 define('BASE', dirname(__FILE__));
 
 /* Add the template parser class */
@@ -31,8 +31,8 @@ else
 $viewLoader = new ViewLoader(BASE.'/templates/');
 
 $data = array();
-$data['langSuffix'] 	= $langSuffix; 	//used for asset file names
-$data['langCode'] 		= $lang;		//used for language metadata
+$data['langSuffix'] = $langSuffix; 	//used for asset file names
+$data['langCode'] 	= $lang;		//used for language metadata
 
 //All of the localised strings for the website
 $data = array_merge($data, $localisedStrings[$lang]);
