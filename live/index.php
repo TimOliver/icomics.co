@@ -1,6 +1,6 @@
 <?php
 /*
-iComics.co Home Page
+iComics.co Live Page
 */
 
 error_reporting(0);
