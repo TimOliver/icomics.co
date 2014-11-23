@@ -5,8 +5,6 @@
     <meta name="description" content="<?php echo $langPageDescription; ?>" />
     <meta name="keywords" content="<?php echo $langPageKeywords; ?>" />
 	<meta name="google-site-verification" content="u3JPeQFi0Xm-S2mXiPIsgOhEKAUDaJnZU0IYoLZj32M" />
-
-    
     
     <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon" />
 	<!-- Apple Touch Icons -->
