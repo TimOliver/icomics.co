@@ -16,16 +16,16 @@ require_once('strings.include.php');
 $lang = $_GET['lang'];
 $langSuffix = '';
 
-//Right now, only English and Japanese are supported.
-if ($lang!='jp')
-{
+//TODO: Put Japanese back in
+//if ($lang!='jp')
+//{
 	$lang = 'en';
-}
-else
-{
-	$langSuffix = 'JP';
-	$lang = 'ja';
-}
+//}
+//else
+//{
+//	$langSuffix = 'JP';
+//	$lang = 'ja';
+//}
 
 // This class populates an HTML template with dynamic info
 $viewLoader = new ViewLoader(BASE.'/templates/');

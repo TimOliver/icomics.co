@@ -24,7 +24,7 @@
               $('img').retina();
 
              $(".tweets").tweet({
-                query: "icomics -from:vk_icomics -NARR8 -icomics.co.kr lang:en -from:sup_tim_lol",
+                query: "icomics -NARR8 lang:en",
                 avatar_size: 64,
                 count: 2,
                 loading_text: "loading tweets...",
@@ -67,39 +67,21 @@
     }(document, 'script', 'facebook-jssdk'));</script>
     <header>
       <div class="container">
-        <?php if ($langCode=='ja'): ?>
-        <img src="img/iComicsHeaderArtJP.png" id="splash-art" width="608" height="763" alt="iPhone 5と新しいiPadで、iComics。" />
-        <?php else: ?>
-        <img src="img/iComicsHeaderArt.png" id="splash-art" width="608" height="763" alt="iComics on iPhone 5 and the new iPad" />
-        <?php endif; ?>
+        <img src="img/iComicsHeaderArt.png" id="splash-art" width="629" height="729" alt="iComics on iPhone 6 Plus and iPad Air 2" />
 
-        <img src="img/iComicsLogo.png" id="logo" width="402" height="114" alt="iComics Logo" />
+        <img src="img/iComicsLogo.png" id="logo" width="341" height="96" alt="iComics Logo" />
         <a href="<?php if ($langCode=='ja'):?>/jp<?php endif; ?>/app">
-          <?php if ($langCode=='ja'): ?>
-          <img src="img/AppStoreBadgeJP.png" id="app-store-badge" width="245" height="76" alt="App Storeで配信中" />
-          <?php else: ?>
-          <img src="img/AppStoreBadge.png" id="app-store-badge" width="244" height="76" alt="Now available on the App Store. (Compatible with iPhone, iPod touch and iPad. Requires iOS 5.0 or above)" />
-          <?php endif; ?>
+          <img src="img/AppBadge.png" id="app-store-badge" width="244" height="76" alt="Now available on the App Store. (Compatible with iPhone, iPod touch and iPad. Requires iOS 7.0 or above)" />
         </a>
-        <?php if ($langCode=='ja'): ?>
-        <img src="img/AppRequirementsJP.png" alt="iPad,iPhone,iPod touchに対応しています。iOS5.0以降が必要です。" width="225" height="59" id="app-requirements" />
-        <?php else: ?>
-        <img src="img/AppRequirements.png" alt="Compatible with iPad, iPhone and iPod touch" width="215" height="60" id="app-requirements" />
-        <?php endif; ?>
       </div>
     </header>
     <div id="content">
       <div class="container">
         <div class="info-block" id="intro">
-          <img src="img/iPhone4S<?php echo $langSuffix;?>.png" alt="iComics on iPhone 4S" width="352" height="365" id="iphone-4s" />
+          <img src="img/iPhone5sGold.png" alt="iComics on iPhone 5s" width="382" height="391" id="iphone-5s" />
 
           <div class="text-block">
-            <?php if ($langCode=='ja'): ?>
-            <img src="img/IntroductionTitleJP.png" alt="iOSコミックリーダーiComicsへようこそ" width="442" height="94" class="info-title" /><br/>
-            <?php else: ?>
-            <img src="img/IntroductionTitle.png" alt="Welcome to iComics. The comic reader for iOS." width="459" height="78" class="info-title" /><br/>
-            <?php endif; ?>
-            
+            <img src="img/IntroductionTitle.png" alt="Welcome to iComics. The comic reader for iOS." width="439" height="77" class="info-title" /><br/>
             <?php echo $langIntroText; ?>
           </div>
           <div style="clear:both"></div>
@@ -107,17 +89,11 @@
         <div class="info-block-alt" id="comics-intro">
           <div class="shadow-top">&nbsp;</div>
           <div class="shadow-bottom">&nbsp;</div>
-          <?php if ($langCode=='ja'): ?>
-          <img src="img/iPod5thGenRedJP.png" alt="iPod touch第五世代でiComics" width="307" height="352" id="ipod5g" />
-          <?php else: ?>
-          <img src="img/iPod5thGenRed.png" alt="iComics on 5th Generation iPod touch (PRODUCT) RED Edition" width="307" height="352" id="ipod5g" />
-          <?php endif; ?>
+
+          <img src="img/iPhone5cRed.png" alt="iComics on iPhone 5c" width="384" height="372" id="iphone-5c" />
+
           <div class="text-block">
-            <?php if ($langCode=='ja'): ?>
-            <img src="img/ComicsTitleJP.png" alt="コミック？どんなコミック？" width="562" height="45" class="info-title" />
-            <?php else: ?>
-            <img src="img/ComicsTitle.png" alt="Comics? What comics?" width="547" height="35" class="info-title" />
-            <?php endif; ?>
+            <img src="img/ComicsTitle.png" alt="Comics? What comics?" width="526" height="33" class="info-title" />
             <p><?php echo $langComicsTypeDescription; ?></p>
             <div class="comics-list formats">
               <h3><?php echo $langFormats; ?></h3>
@@ -138,10 +114,9 @@
                 <li><a href="http://digitalcomicmuseum.com/" rel="nofollow">Digital Comic Museum</a></li>
                 <li><a href="http://comicbookplus.com/" rel="nofollow">Comic Book Plus</a></li>
                 <li><a href="http://www.flashbackuniverse.com/downloads.aspx" rel="nofollow">FlashBack Universe</a></li>
-                <li><a href="http://comics.drivethrustuff.com/" rel="nofollow">DriveThruComics.com</a></li>
+                <li><a href="http://comics.drivethrustuff.com/" rel="nofollow">DriveThruComics</a></li>
                 <li><a href="http://www.slgcomic.com/eyemelt" rel="nofollow">SLG EyeMelt</a></li>
-                <li><a href="http://www.teamfortress.com/comics.php" rel="nofollow">Team Fortress Comics</a></li>
-                <li><a href="http://www.j-comi.jp/" rel="nofollow">J-comi</a></li>
+                <li><a href="http://www.teamfortress.com/comics.php" rel="nofollow">Team Fortress 2</a></li>
               </ul>
             </div>
             <div style="clear:both"></div>
@@ -149,22 +124,14 @@
         </div>
         <div class="info-block" id="features-1">
 
-          <?php if ($langCode=='ja'): ?>
-          <img src="img/iPhone5TogglesJP.png" alt="iComics toggle controls on an iPhone 5" width="1012" height="662" id="iphone5toggles" />
-          <?php else: ?>
-          <img src="img/iPhone5Toggles.png" alt="iComics toggle controls on an iPhone 5" width="1012" height="661" id="iphone5toggles" />
-          <?php endif; ?>
+          <img src="img/iPhone6Toggles.png" alt="iComics toggle controls on an iPhone 5" width="947" height="590" id="iphone6toggles" />
           <div class="toggle-text page-direction"><?php echo $langTogglePageDirection; ?></div>
           <div class="toggle-text zoom-lock"><?php echo $langToggleZoomLock; ?></div>
           <div class="toggle-text split-wide-pages"><?php echo $langToggleSplitWidePages; ?></div>
           <div class="toggle-text page-scrub"><?php echo $langTogglePageJump; ?></div>
 
           <div class="text-block">
-            <?php if ($langCode=='ja'): ?>
-            <img src="img/Features2TitleJP.png" alt="いつ読むか？今でしょう！" width="511" height="43" class="info-title" /><br/>
-            <?php else: ?>
-            <img src="img/Features2Title.png" alt="Read all of the things!" width="343" height="43" class="info-title" /><br/>
-            <?php endif; ?>
+            <img src="img/Features2Title.png" alt="Ready for any comic." width="489" height="42" class="info-title" /><br/>
             <?php echo $langReadingTogglesDescription; ?>
           </div>
           <div style="clear:both"></div>
@@ -173,14 +140,11 @@
           <div class="shadow-top">&nbsp;</div>
           <div class="shadow-bottom">&nbsp;</div>
           
-          <img src="img/iPad1stGen<?php echo $langSuffix;?>.png" alt="iComics on the original iPad" width="499" height="357" id="ipad" />
+          <img src="img/iPad1stGen.png" alt="iComics on the original iPad" width="499" height="357" id="ipad" />
 
           <div class="text-block">
-            <?php if ($langCode=='ja'): ?>
-            <img src="img/Features1TitleJP.png" alt="早い。軽い。簡単。" width="370" height="43" class="info-title" /><br/>
-            <?php else: ?>
             <img src="img/Features1Title.png" alt="Fast, flexible and easy." width="384" height="43" class="info-title" /><br/>
-            <?php endif; ?>
+
             <div class="features-column">
               <?php echo $langFeaturesFirstColumn; ?>
             </div>
@@ -192,28 +156,11 @@
         </div>
          <div class="info-block">
           <div id="upcoming-features">
-            <?php if ($langCode=='ja'): ?>
-            <img src="img/UpcomingFeaturesJP.png" alt="Upcoming features" width="305" height="44" class="info-title" /><br/>
-            <?php else: ?>
             <img src="img/UpcomingFeatures.png" alt="Upcoming features" width="348" height="44" class="info-title" /><br/>
-            <?php endif; ?>
+
             <?php echo $langUpcomingFeatures; ?>
             
             <ul class="upcoming-features-list">
-              <?php if ($langCode=='ja'): ?>
-              <li>iOS 7 対応</li>
-              <li>ブックマーク追加</li>
-              <li>別々のコミックコレクション</li>
-              <li>コミックのサムネール一覧</li>
-              <li>直接Dropboxから取り込み</li>
-              <li>WiFi/WebDAV対応</li>
-              <li>直接ブラウザー対応</li>
-              <li>別のコッミクにホットジャンプ</li>
-              <li>ネストされたファイル開き</li>
-              <li>コミックのカバー変更</li>
-              <li>縦のページ方向</li>
-              <li>デュアルページ表示</li>
-              <?php else: ?>
               <li>iOS 7 Support</li>
               <li>Adding bookmarks</li>
               <li>Separate comic collections</li>
@@ -226,11 +173,10 @@
               <li>Crop/format comic covers</li>
               <li>Vertical Scrolling</li>
               <li>Dual-page spread</li>
-              <?php endif; ?>
             </ul>
             <div style="clear:both"></div>
 
-            <a href="http://icomics.uservoice.com"><?php echo $langUserVoiceLink; ?></a><br/>
+            <a href="http://bugs.icomics.co"><?php echo $langUserVoiceLink; ?></a><br/>
 
           </div>
         </div>
@@ -240,11 +186,7 @@
       <div class="container">
         <ul id="footer-items">
           <li>
-              <?php if ($langCode=='ja'): ?>
-              <img src="img/CreditsTitleJP.png" class="title" alt="iComicsを作った人？" width="269" height="32" /><br/>
-              <?php else: ?>
               <img src="img/CreditsTitle.png" class="title" alt="Who made iComics?" width="251" height="26" /><br/>
-              <?php endif; ?>
 
               <div class="credits-text">
                 <?php echo $langDeveloperProfile; ?>
@@ -260,38 +202,11 @@
               <img src="img/Tim.png" alt="Tim Oliver" width="118" height="150" />
           </li>
           <li>
-              <?php if ($langCode=='ja'): ?>
-              <img src="img/SocialFeedTitleJP.png" class="title" alt="最新のツイート" width="206" height="33" /><br/>
-              <?php else: ?>
               <img src="img/SocialFeedTitle.png" class="title" alt="Word on the Tweets" width="248" height="26" /><br/>
-              <?php endif; ?>
               <div class="tweets"></div>
-
-              <div id="social-links">
-                <!-- Twitter -->
-                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://icomics.co" data-text="Check out iComics, the comic reader for iOS!" data-related="tim0liver">Tweet</a>
-                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-                <!-- Facebook -->
-                <div class="fb-like" data-href="http://icomics.co" data-send="true" data-colorscheme="dark" data-layout="button_count" data-width="450" data-show-faces="true"></div>
-         
-                <!-- Google Plus -->
-                <!-- <div class="g-plusone"></div>
-                <script type="text/javascript">
-                  (function() {
-                    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-                    po.src = 'https://apis.google.com/js/plusone.js';
-                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-                  })();
-                </script>-->
-              </div>
           </li>
           <li class="last">
-              <?php if ($langCode=='ja'): ?>
-              <img src="img/SupportTitleJP.png" class="title" alt="お問い合わせ" width="179" height="32" />
-              <?php else: ?>
               <img src="img/SupportTitle.png" class="title" alt="Who made iComics?" width="229" height="31" />
-              <?php endif; ?>
 
               <div id="support-form">
                 <div id="loader" style="display: none;"><img src="img/AjaxLoader.gif" width="32" height="32" alt="Loading..." /></div>

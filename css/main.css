@@ -53,9 +53,15 @@ header
 	height: 755px;
 	position: relative;
 	width: 100%;
-	background: #eee url(../img/HeaderBackground.png);
 	z-index: 0;
-
+	background: #eee; /* Old browsers */
+	background: -moz-linear-gradient(top, #ffffff 0%, #ededed 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #ffffff 0%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #ffffff 0%,#ededed 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #ffffff 0%,#ededed 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #ffffff 0%,#ededed 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 );
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 2), screen and (max-moz-device-pixel-ratio: 2) 
@@ -70,7 +76,7 @@ header
 #splash-art
 {
 	position: absolute;
-	top: 12px;
+	top: 35px;
 	left: -100px;
 }
 
@@ -78,14 +84,14 @@ header
 {
 	position: absolute;
 	top: 300px;
-	left: 550px;
+	left: 600px;
 }
 
 #app-store-badge
 {
 	position: absolute;
 	top: 550px;
-	left: 640px;
+	left: 660px;
 }
 
 #app-requirements {
@@ -120,19 +126,17 @@ header
 {
 	width: 980px;
 	min-height: 100px;
-	background: #eee url(../img/ContentAltBG.jpg) repeat-y;
 	position: relative;
 	text-shadow: 0 1px 0 #fff;
 	overflow: hidden;
-}
-
-@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (max-moz-device-pixel-ratio: 2) 
-{
-	.info-block-alt
-	{
-		background: #eee url(../img/ContentAltBG-2x.jpg) repeat-y;
-		background-size: 981px 391px;
-	}
+	background: #eee; /* Old browsers */
+	background: -moz-linear-gradient(left, #ffffff 0%, #efefef 50%, #ffffff 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffffff), color-stop(50%,#efefef), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, #ffffff 0%,#efefef 50%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, #ffffff 0%,#efefef 50%,#ffffff 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, #ffffff 0%,#efefef 50%,#ffffff 100%); /* IE10+ */
+	background: linear-gradient(to right, #ffffff 0%,#efefef 50%,#ffffff 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 );
 }
 
 .info-block-alt .shadow-top
@@ -177,17 +181,17 @@ screen and (max-moz-device-pixel-ratio: 2)
 }
 
 #intro {
-	height: 420px;
+	height: 450px;
 }
 
 #intro .text-block
 {
 	width: 540px;
 	top: 100px;
-	left: 35px;
+	left: 15px;
 }
 
-#iphone-4s 
+#iphone-5s 
 {
 	position: absolute;
 	bottom: 0;
@@ -195,24 +199,17 @@ screen and (max-moz-device-pixel-ratio: 2)
 }
 
 #comics-intro {
-	height: 390px;
+	height: 420px;
 }
 
 #comics-intro .text-block
 {
-	width: 575px;
+	width: 500px;
 	top: 60px;
-	left: 370px;
+	left: 453px;
 }
 
-#ipod4g
-{
-	position: absolute;
-	bottom: 0;
-	left: 15px;
-}
-
-#ipod5g
+#iphone-5c
 {
 	position: absolute;
 	bottom: 0;
@@ -221,7 +218,7 @@ screen and (max-moz-device-pixel-ratio: 2)
 
 .comics-list
 {
-	width: 380px;
+	width: 320px;
 	float: left;
 	margin-top:10px;
 	font-size: 13pt;
@@ -229,7 +226,7 @@ screen and (max-moz-device-pixel-ratio: 2)
 
 .formats
 {
-	width: 190px !important;
+	width: 180px !important;
 }
 
 .comics-list h3
@@ -262,13 +259,13 @@ screen and (max-moz-device-pixel-ratio: 2)
 .downloads-list li
 {
 	float: left;
-	width: 185px;
+	width: 155px;
 }
 
-#iphone5toggles {
+#iphone6toggles {
 	position: absolute;
-	right: -21px;
-	bottom: -35px;
+	left: 0;
+	bottom: 0px;
 }
 
 .toggle-text {
@@ -295,8 +292,8 @@ screen and (max-moz-device-pixel-ratio: 2)
 }
 
 .page-scrub {
-	top: 242px;
-	left: 9px;
+	top: 668px;
+	left: 280px;
 }
 
 #features-1 {
@@ -306,8 +303,8 @@ screen and (max-moz-device-pixel-ratio: 2)
 #features-1 .text-block
 {
 	width: 435px;
-	top: 35px;
-	left: 32px;
+	top: 45px;
+	left: 480px;
 }
 
 .features-column
@@ -453,9 +450,15 @@ footer a:hover
 	position: absolute;
 	top:0;
 	left: 0;
-	box-shadow: 0 2px 5px #111;
 	width:64px;
 	height: 64px;
+	
+}
+
+.tweet_avatar img 
+{
+	border-radius: 16px;
+	box-shadow: 0 2px 5px #111;
 }
 
 .tweet_user
