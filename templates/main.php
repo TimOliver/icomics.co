@@ -215,7 +215,7 @@
       <div id="copyright">
         <div class="container">
           <div id="copyright-text">
-            Copyright &copy; <a href="http://olivr.vg">Tim Oliver</a> 2012-<?php echo date('Y'); ?>. Hosted by <a href="http://www.ennoverse.com" target="_blank">Ennoverse</a>. 
+            Copyright &copy; Tim Oliver 2012-<?php echo date('Y'); ?>. Hosted by <a href="http://www.ennoverse.com" target="_blank">Ennoverse</a>. 
             Artwork: <a href="http://www.pixeden.com/psd-mock-up-templates/psd-ipad-air-2-vector-mockup" target="_blank">iPad Air 2</a> &bull; 
                                 <a href="http://www.pixeden.com/psd-mock-up-templates/iphone-6-plus-psd-vector-mockup" target="_blank">iPhone 6 Plus</a>  &bull; 
                                 <a href="http://www.pixeden.com/psd-mock-up-templates/3d-view-iphone-6-psd-vector-mockup">iPhone 6</a> &bull; 
